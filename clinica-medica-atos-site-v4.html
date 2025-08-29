@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clínica Médica Atos — Cuidado humano com precisão</title>
+  <meta name="description" content="Geriatria, Cardiologia e Clínica Médica em Taubaté (SP). Agendamento prático, equipe experiente e atendimento acolhedor na Clínica Médica Atos.">
+  <meta name="theme-color" content="#0E5AA7" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Clínica Médica Atos — Cuidado humano com precisão">
+  <meta property="og:description" content="Geriatria, Cardiologia e Clínica Médica em Taubaté (SP). Agende sua consulta.">
+  <meta property="og:image" content="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='1200' height='630' fill='%230E5AA7'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='56' fill='white'>Clínica Médica Atos</text></svg>">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://clinicamedicaatos.com.br/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clínica Médica Atos — Cuidado humano com precisão">
+  <meta name="twitter:description" content="Agende sua consulta com a nossa equipe de Geriatria, Cardiologia e Clínica Médica.">
+  <meta name="twitter:image" content="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='1200' height='630' fill='%230E5AA7'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='56' fill='white'>Clínica Médica Atos</text></svg>">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230E5AA7'/><path d='M20 33h24v6H20zM31 14h2v36h-2z' fill='%23fff'/></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230E5AA7'/><path d='M20 33h24v6H20zM31 14h2v36h-2z' fill='%23fff'/></svg>">
+
+  <style>
+    :root{
+      --brand:#0E5AA7;
+      --brand-600:#1567bd;
+      --accent:#2AA65A;
+      --accent-700:#1e7d44;
+      --ink:#1b1f24;
+      --muted:#5b6774;
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --ring:rgba(14,90,167,.2);
+      --rx:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --success:#16a34a;
+      --danger:#dc2626;
+      --warn:#f59e0b;
+      --space:clamp(.8rem,2vw,1rem);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;display:block}
+    .container{width:min(1120px,92%);margin-inline:auto}
+    .sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+
+    h1{font-size:clamp(1.9rem,3.8vw,3rem);margin:.2rem 0 .4rem}
+    h2{font-size:clamp(1.4rem,2.6vw,2rem);margin:0 0 .6rem}
+    h3{font-size:clamp(1.1rem,2vw,1.3rem);margin:.2rem 0 .4rem}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #e6eef7}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.2px}
+    .brand svg{width:34px;height:34px}
+    .nav ul{display:flex;gap:.5rem;list-style:none;margin:0;padding:0}
+    .nav a{padding:.55rem .8rem;border-radius:12px}
+    .nav a[aria-current="page"]{background:#edf4fb}
+    .menu-btn{display:none}
+    .cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--brand);color:#fff;padding:.7rem 1rem;border-radius:14px;box-shadow:var(--shadow);border:0;cursor:pointer;font-weight:700;min-height:44px}
+    .cta:hover{background:var(--brand-600)}
+    @media (max-width:900px){
+      .menu-btn{display:inline-flex;background:#fff;border:1px solid #d7e2ee;padding:.55rem .7rem;border-radius:12px;min-height:44px}
+      .nav ul{position:fixed;inset:64px 0 auto 0;background:#fff;border-bottom:1px solid #e8eef5;flex-direction:column;padding:1rem;transform:translateY(-120%);transition:.25s}
+      .nav ul.open{transform:translateY(0)}
+    }
+
+    /* Hero */
+    .hero{background:radial-gradient(1000px 400px at 50% -40%,#dcebf8 10%,transparent 60%),#f8fafc;padding:clamp(1.4rem,3vw,2.2rem) 0 var(--space)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1.2rem;align-items:center}
+    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    .tag{display:inline-flex;align-items:center;gap:.5rem;background:#edf4fb;color:#0b4c8c;padding:.35rem .6rem;border-radius:999px;font-weight:700;font-size:.9rem}
+    .subtitle{color:var(--muted);max-width:60ch}
+    .hero-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:.9rem}
+    @media (max-width:900px){.hero-cards{grid-template-columns:1fr 1fr}}
+    .card{background:var(--card);padding:var(--space);border-radius:var(--rx);box-shadow:var(--shadow);border:1px solid #e8eef5}
+    .badge{display:inline-block;font-size:.75rem;background:#e7f6ed;color:#145a32;padding:.25rem .5rem;border-radius:999px}
+
+    section{padding:clamp(1.4rem,5vw,3rem) 0}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:1rem}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+
+    /* Services */
+    .svc-item{display:flex;gap:1rem;align-items:flex-start;padding:1rem;border:1px solid #e8eef5;border-radius:var(--rx);background:#fff}
+
+    /* Team */
+    .doc{background:#fff;border:1px solid #e8eef5;border-radius:var(--rx);padding:1rem;box-shadow:var(--shadow)}
+    .doc .avatar-photo{width:88px;height:88px;border-radius:50%;object-fit:cover;margin-bottom:.6rem;border:1px solid #e0e9f5}
+
+    /* Testimonials */
+    .slider{position:relative;overflow:hidden;border-radius:var(--rx);border:1px solid #e8eef5;background:#fff}
+    .slides{display:flex;transition:transform .5s ease}
+    .slide{min-width:100%;padding:1.2rem;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start}
+    .t-avatar{width:64px;height:64px;border-radius:50%;overflow:hidden;border:1px solid #e6eef7}
+    .t-name{font-weight:700}
+    .stars{font-size:1rem;color:#f59e0b}
+    .dots{display:flex;gap:.5rem;justify-content:center;margin-top:.6rem}
+    .dots button{width:10px;height:10px;border-radius:50%;border:0;background:#d7e2ee;cursor:pointer}
+    .dots button.active{background:var(--brand)}
+
+    /* Contact & Booking – wizard */
+    form{display:grid;gap:.75rem}
+    input, select, textarea{padding:.8rem;border-radius:12px;border:1px solid #cfdae7;background:#fbfdff;font:inherit;color:var(--ink)}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 4px var(--ring)}
+    label{font-weight:700}
+    .helper{font-size:.9rem;color:var(--muted)}
+    .error{color:var(--danger);font-size:.85rem}
+    .field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--danger);box-shadow:0 0 0 4px rgba(220,38,38,.15)}
+    .wizard{border:1px solid #e8eef5;border-radius:16px;background:#fff;box-shadow:var(--shadow);padding:1rem}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:.8rem}
+    .step{display:flex;align-items:center;gap:.5rem;padding:.5rem;border-radius:10px;border:1px dashed #d7e2ee;color:#4b5563;background:#f8fbff}
+    .step.active{border-style:solid;border-color:var(--brand);background:#edf4fb}
+    .wizard-actions{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:flex-end;margin-top:.5rem}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:12px;border:1px solid #d7e2ee;background:#fff;cursor:pointer;min-height:44px}
+    .btn.primary{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:800}
+    .btn.ghost{background:#fff}
+    .btn[disabled]{opacity:.6;cursor:not-allowed}
+    .toast{position:fixed;right:1rem;bottom:1rem;background:#111827;color:#fff;padding:.8rem 1rem;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(20px);transition:.25s;z-index:99999}
+    .toast.show{opacity:1;transform:translateY(0)}
+    .spinner{width:18px;height:18px;border-radius:50%;border:3px solid #fff;border-top-color:transparent;display:inline-block;animation:spin 1s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* Calendar */
+    .calendar{border:1px solid #e8eef5;border-radius:12px;overflow:hidden;background:#fff}
+    .cal-head{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;border-bottom:1px solid #e8eef5}
+    .cal-grid{display:grid;grid-template-columns:repeat(7,1fr)}
+    .cal-grid div{padding:.6rem;border-right:1px solid #f0f4f9;border-bottom:1px solid #f0f4f9;min-height:42px}
+    .cal-grid .hd{background:#f7fbff;font-weight:700;text-align:center}
+    .cal-day{cursor:pointer;text-align:right}
+    .cal-day.disabled{opacity:.35;cursor:not-allowed;background:#fafcff}
+    .cal-day .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;margin-left:.25rem}
+    .cal-day.selected{outline:2px solid var(--brand);background:#edf4fb}
+    .slots{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
+    .slot{padding:.5rem .7rem;border:1px solid #d7e2ee;border-radius:999px;cursor:pointer;background:#fff}
+    .slot.active{background:var(--brand);border-color:var(--brand);color:#fff}
+    .slot[disabled]{opacity:.5;cursor:not-allowed}
+
+    /* FAQ */
+    .faq details{border:1px solid #e8eef5;border-radius:12px;background:#fff;padding:.6rem 1rem}
+    .faq summary{cursor:pointer;font-weight:800}
+    .faq details+details{margin-top:.6rem}
+
+    /* Multimedia */
+    .video-wrap{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid #e8eef5;background:#000}
+    .video-wrap iframe,.video-wrap video{width:100%;height:100%}
+
+    /* Footer & FAB */
+    footer{background:#0e1622;color:#d0d9e6;padding:2rem 0 6rem}
+    footer a{color:#d0e4ff}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem}
+    @media (max-width:900px){.foot-grid{grid-template-columns:1fr}}
+    .fab{position:fixed;right:1rem;bottom:1rem;display:grid;gap:.6rem;z-index:9999}
+    .fab a{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#fff;padding:.7rem .9rem;border-radius:999px;box-shadow:var(--shadow);font-weight:800;min-height:44px}
+    .fab a.secondary{background:var(--brand)}
+    .to-top{position:fixed;right:1rem;bottom:6rem;opacity:0;pointer-events:none;transition:.25s}
+    .to-top.show{opacity:1;pointer-events:auto}
+    .to-top button{background:#111827;color:#fff;border:0;padding:.7rem .9rem;border-radius:12px;min-height:44px}
+  </style>
+</head>
+<body>
+  <a href="#conteudo" class="sr-only">Ir para o conteúdo principal</a>
+  <header>
+    <nav class="container nav" aria-label="Principal">
+      <div class="brand">
+        <svg aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0E5AA7"/><path d="M20 33h24v6H20zM31 14h2v36h-2z" fill="#fff"/></svg>
+        <span>Clínica Médica Atos</span>
+      </div>
+      <button class="menu-btn" aria-controls="menu" aria-expanded="false" title="Abrir menu" id="menuBtn">Menu</button>
+      <ul id="menu" role="menubar">
+        <li role="none"><a role="menuitem" href="#home">Início</a></li>
+        <li role="none"><a role="menuitem" href="#clinica">A Clínica</a></li>
+        <li role="none"><a role="menuitem" href="#equipe">Equipe</a></li>
+        <li role="none"><a role="menuitem" href="#servicos">Especialidades</a></li>
+        <li role="none"><a role="menuitem" href="#faq">FAQ</a></li>
+        <li role="none"><a role="menuitem" href="#contato" class="cta">Agendar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="tag">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12s2-4 6-4 3 4 6 4 6-4 6-4" stroke="#0E5AA7" stroke-width="2" stroke-linecap="round"/><path d="M3 12h4l2-4 2 8 2-4h6" stroke="#0E5AA7" stroke-width="2" stroke-linecap="round"/></svg>
+            Saúde centrada na pessoa
+          </span>
+          <h1>Geriatria, Cardiologia e Clínica Médica em Taubaté</h1>
+          <p class="subtitle">Atendimento acolhedor com equipe experiente. Agendamento simples, lembretes automáticos e foco na sua jornada de saúde.</p>
+          <div style="margin-top:.8rem;display:flex;gap:.75rem;flex-wrap:wrap">
+            <a href="#contato" class="cta">Agende sua consulta</a>
+            <a href="#servicos" class="cta" style="background:#1f2937">Ver especialidades</a>
+          </div>
+          <div class="hero-cards">
+            <div class="card"><span class="badge">Agendamento 24/7</span><h3>Horários em tempo real</h3><p class="muted">Escolha profissional e tipo de consulta. Receba lembretes por WhatsApp/Email.</p></div>
+            <div class="card"><span class="badge">Acessível</span><h3>LGPD &amp; WCAG</h3><p class="muted">Consentimento explícito, alto contraste e navegação por teclado.</p></div>
+            <div class="card"><span class="badge">SEO Local</span><h3>Fácil de encontrar</h3><p class="muted">Meta tags, conteúdo localizado e Schema.org médico.</p></div>
+          </div>
+        </div>
+        <div aria-hidden="true">
+          <div class="card" style="min-height:320px">
+            <h3>Sua primeira visita</h3>
+            <ul style="line-height:1.9;padding-left:1rem;margin:0">
+              <li>Documento com foto e cartão do convênio (se houver)</li>
+              <li>Lista de medicamentos em uso</li>
+              <li>Exames recentes (laboratoriais e de imagem)</li>
+            </ul>
+            <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+              <div class="card" style="background:#fefefe"><strong>Endereço</strong><p class="muted">Av. Tiradentes, 169 — Jardim das Nações, Taubaté/SP</p></div>
+              <div class="card" style="background:#fefefe"><strong>Horários</strong><p class="muted">Seg–Sex, 8h–18h<br><em>Plantões sob consulta</em></p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="clinica">
+      <div class="container grid cols-2">
+        <div class="card" style="min-height:260px;background:linear-gradient(135deg, rgba(14,90,167,.08), rgba(42,166,90,.08));border:1px solid #e8eef5;border-radius:var(--rx)"></div>
+        <div>
+          <h2>A Clínica</h2>
+          <p class="muted">Cuidar bem é combinar ciência, tempo e escuta. Unimos atendimento humano com processos modernos: confirmação de consulta automática, lembretes e canal direto para tirar dúvidas.</p>
+          <div class="grid cols-2" style="margin-top:.8rem">
+            <div class="card"><strong>Missão</strong><p class="muted">Promover saúde com precisão diagnóstica e acolhimento.</p></div>
+            <div class="card"><strong>Valores</strong><p class="muted">Ética, empatia, excelência clínica e educação continuada.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="servicos">
+      <div class="container">
+        <h2>Especialidades</h2>
+        <p class="muted">Atendimento integrado com foco em prevenção e qualidade de vida.</p>
+        <div class="grid">
+          <div class="svc-item">
+            <div aria-hidden="true"><svg width="44" height="44" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#0E5AA7" stroke-width="2"/><path d="M4 22c1-4 4-6 8-6s7 2 8 6" stroke="#0E5AA7" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div><h3>Geriatria</h3><p class="muted">Cuidado amplo ao idoso: cognição, memória, prevenção de quedas e gestão de múltiplas condições crônicas.</p></div>
+          </div>
+          <div class="svc-item">
+            <div aria-hidden="true"><svg width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M12 21s-6-4-6-9a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5-8 9-8 9Z" stroke="#0E5AA7" stroke-width="2"/><path d="M3 13h4l2-5 2 8 2-4h6" stroke="#0E5AA7" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div><h3>Cardiologia</h3><p class="muted">Avaliação completa do risco cardiovascular, hipertensão, arritmias e seguimento pós-eventos.</p></div>
+          </div>
+          <div class="svc-item">
+            <div aria-hidden="true"><svg width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M6 3v6a4 4 0 1 0 8 0V3M6 7h8M18 10a3 3 0 1 0 0 6h1a2 2 0 1 1 0 4h-1" stroke="#0E5AA7" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div><h3>Clínico Geral</h3><p class="muted">Porta de entrada para avaliação global, diagnóstico diferencial e seguimento longitudinal.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="equipe" style="background:linear-gradient(180deg,#fff,#f5fbf7)">
+      <div class="container">
+        <h2>Nossa Equipe</h2>
+        <p class="muted">Profissionais com formação sólida e compromisso com atualização constante.</p>
+        <div class="grid cols-3">
+          <article class="doc">
+            <img class="avatar-photo" loading="lazy" alt="Foto da Dra. Mariana Moreira — Geriatra" src="data:image/webp;base64,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" />
+            <h3>Dra. Mariana Moreira</h3>
+            <small class="muted">Geriatra — CRM 169277 • RQE 80432</small>
+            <p class="muted">UNIARA • Residência em Clínica Médica (Iamspe) • Residência em Geriatria (Unifesp).</p>
+            <p><a class="btn ghost" target="_blank" rel="noopener" href="https://clinicamedicaatos.com.br/dra-marianamoreira/">Saiba mais</a></p>
+          </article>
+
+          <article class="doc">
+            <img class="avatar-photo" loading="lazy" alt="Foto do Dr. Guilherme Campos — Geriatra" src="data:image/webp;base64,UklGRnojAABXRUJQVlA4IG4jAADQ0wCdASpaAYwBPp1Kn0upJiQio/J7cSATiWdu4XSOABmmLXtaKS3Hto5yorOPV6Nxcx2UO42b9DL5esWt45vpvsE+UZ/t+XL9l/4nsNdL392CspDNC4rkCC4gE5xcQCc4uIBGkXYetVOG6qhedJh7NC4rkCC4gE5mBh7QHikh7nqdxVGthbc1kIC9y90Bvuivy7XT4hmhcVyBA+6bUdczJ8tTZQ1crgVlBetN2L/vBdE5DGFEU0xXPInR0TU8GDEu+DkCC4gE5xcMSA6az+ctQuyCaY+Bvcn14B7QMeD/pLmiH2DcL9KTgfQuK5AguIBNaLGwYsWM+OePYwTkLBmq4bVqCmqsVyxtOrzRjlm642USuIuolao/O35TM9iuQILh+/kP02K0OcEPyBYWcF9gSe8kJntvtRMLC0tzZUiNtBsS8aXDqoBw17UrxQgHD5AguIBOZ/Qtgqy6nVSKvED0HOgo1qA9b3WljHQA/avVkmvf/rBf6tFDPinKoP5O1jV7tqUzPYrkCC2LOBdF2n2EEH9M9xB/jtnJNM9nX6i/8VtoQfvOKgeR7cw5jL8cd5HyBBcQCc0Dxh2Kpt3yLcswD5e7djdf7QbYySsJDM0dFxXIEFxAJwGqJ3sYGgX1QdHknfKsbZt6+JWTQc3U97VTZmlxG8p1BIBcVyBBcP8Kfg2ToYYyiibZQ3AfJ9tddZqOJ5HwOElsqVN8amBFs25A377WtOSOB8gQXD/B35U+hTYNUHPIzUMq4qNUMsDn+HTWyuv5iwj6nPwYFtv74a4aiM1W5qTlLpnKqeoF4ZrlPdpWAH2mLLglurSFbAWVZyHIjiyzEnWviGDafxwiiyoCVD331EujqCg2OyM9wmnN9+MRqK1jxVIuwnrgwU/Yx1PablyRGwIOTVr/FB1BonXSSNHBfnaEbxtCy8HvByM9wqO7RcJc9sGstPypVrplPatpYdPpAnNjX392LII4dNNKTZqy+ptC2xKqLdIUY4IpCNxkJg9he7Qy8WT0jW0cXWq9v7apGxORzAih95Zn0OB7u7lL35A4ta9UnbW9HYyhML9a10yub0NlttmQwkk8VfmheJQr3Y4+Vi2txcUNE09TAtzGCDfaxhxRxehdiF+36u8DqdybsMJDFPl6CoWz+F5gh6hJn8FThaqiPqyomyjxK2NPW1XLc6e+H+A+F+rV6jiZJZ+1ldU9Mo0hR09YlIkA/HHMbfX/WPrwhcPeV5GlHoxxHrZdi9NiVc62DU9smyl6ecLKRxckKpzPqpTyTnuW7PuRTlgUECFTN+/g8k95tfDrSkRsJifZF5pl5o3swDdUgZXh+UY0jdw2j4pyiKFTMMHtodO5JSn7tUvN2GeZJHG8cK/fcElXml0odIlkRTqgmaHSElHeWJp1XoFpOjfNABrYHnexqRpeR1DC+IOgArYGsxYVGY+qzpd5SOSopjHHbrO5FzSxiFSc8v43kTg6Y29MooUG71e/e7WOOTIZoVTsj900tbGLNkDOPXJ5x5HSumh/ZtjxKVzeY4qP1v/q2paOUoP4J30TV/cFHXI7OCc1Y6KK0IWSI0OV7xPUzAIkYx2pEp71/bsl18R0T5e9udhqfUA6i9hUyHsqGenQy8wLqG3hF/dK6W3D1hvi1lwHHhGNFTD0KKvQfeXuYx3ctWOhE+hUp1ilxUTo580GdEO4kE46gjgrR2qwkcckyJVUfefLonIS0qlWd3/At0Zmn4JBCax7ByRj+zhKm9yCDU3szHLzumv1lZv5MuU/a16OFy5vo2rNB+TGg1oGe2KFtfY6OccuFFhvjXZrNxjFd4MBcny6P7w3atUnD98PpXHHN2lXUfjalX7DwBNvT6asQvij09x5Ap4sv+QzzAiipHBRK8Ino3/0wT+3aleBvKapr9bt1NE73buema1UMlgQe6cwABsh1N9yxOo+G24Tl3hp6XufZEba1KY5wfAKEbKs7JvqknJRlDlmB4J+odWwBPXTEWIHmnIShXtGgkqIOhjYit94owA6fDZsVx4qrn20iN1/hmGZ1l0LNWIGQVS7T5SXDgV2WvGrhegRMcecMLHG0puAWnPjr1rpNvQ5HQyQow9y+LeVtjD9jFLbB9sVtP4rbscxFTwZx0KCcWsvHIN3rYX9m9+uSIkkE5PrkMZD//3qAMe/i5iRHISe2RSuaA7+HVdqUzRvtRZPkzqx1Q9thXNeYREfwAk8RGYhSTQ0JsTrrjn/buPv8EhID0BaBjZFKK/j7i8kyZYhN7crrXQ2mjZ5AAD+92UAAADrFLvUSoxEQ3AOtZcTbi/DkZSgfV6aJPb3eqsInXVQjHBgn69NnRT3GYMyeDuH0zlwIdm+DYp5vwpNWoIZKwG0r8ZVOK8Gv2Yt+Ul3JpwuBvJ9N90/XTXkQun+1/SrdU1ABUm/WDkc99STZrRKhklty317N9GYUdqIIFWz6HB7UyKknIE865UUGADfHtg2ga1MtNSsquQZv1qNWvWcAnKH6WdPovMl2BwjBKFg5znMRTu63dufNxIRT9YPstNVEe/41tXrE+cRqALngEOXNr3hXLEkjrmdlyhK2KqAaA3ojWoothjK6MCQkPhyJ+/lhgcrdzNfodRsNPC5qVFPOzdK153RIOqDXC3Nq1Vkz7VmSQAVZ0fm560jK9WH770j2gArUOzRHcLajok9Srt4ZEIoCYI5y8PfLlYaQRkpfdh2RZGGVXGwChli6MJ+VCZTv0aRAvSOLbQ+CnWCuJZHvzhXUDKE/Z86jNNN5GvBf1NcxuXJHvkzO2BN808Pg3pt4MWNx+UBYYnzce5nY1MzUbNrucBfGsBlF5Vy/6qI27y9AOpOLgkrDOdbu2nvSqWJibXA4I/u3FikS/czQJDwF+2dnakI4s2q132h6KySb5R6Jm/HWovmNBQao783M/QWMAMlqoF79sFBviJJzv6dMMhlS+F38dINIvK1rZgxMLGrDt6YpECBZVzJ/H/MhN5tJ3bavaxJq3g4YTNjzOQicRLQaZlyo0RZ4qorI70k6q5a7gH2MKmg6kMO5eU6Lh5oEHwlrHxtlPfn0YoyP1owEE3D5Kjm9Iv9ZRUk5zmDx6ugu3c0A+SqYKXM0UsBNzU8bW7tShVML48yUIRAHvAOckR++OtGFJrdZOJxquNrlxNSAFIc/PYfFr7IY/UTmQ/eAZhJiSFn4TXQokWhrkcRqO0hwOHC11fKche71FrfV/LsrWAWlB3DJKUZ43JlGdi8CEQeyWDU9LV0IIlvEkYhAYhYjETRLOGSiYEfcoYLmq36KccoGhw2MS/FrbqAADRQ/GALEkPOfYMGdbBwgPUBNf4v2nHPicNR5y0M8tjDGy4GTOjXRxkSX3Xn2jP3296pi5tXqsj6sDraTBmifOLNPybRgbo6+RsoiA3knzfo8piycKL340dN5jQWpPckJgySWoVzfgUkft2dBSWvsjTHDN+v/j8BoZHjDgmRQcEUxaD9/n5GwVHsEni4HLu0428ZCFJVzhgEGH0q5pFRdxqGcFkjkBxlQ0VnQOIWesYw26pDaHyygTkdDWGJQAcqqmZRUE0XhqpemxJLoG5eAWqpALICljzYZoSkgjq2LcF7sQWY+2zdA3hGSnT9+iTZCuUyI/INcNy8fVLuzcDu+lvl3FqjJeQXrJ1FZAb8LhvDmTO5vmDD5U9/z+dyRgMxdfsmsjwgjd+DwiIqz7Sha2CRe1G+ufCfr/3um2nvPAQAyaL0ZxN1OD9PRVe/dcsWUFXW3Q1zEyo8p33pTUV+FxRGFQLRSuw08uSzhpHNVpuhC6qU6z68/d4n14fOxs2OTKw76w3HdSS5QWFQ7vGvifdmpUitbH8e4JzZfopg5NxwFxRv0GPXGw7mT44MTJqlhsdTh/+BCNJmuPtpVabR/ugdGZzth/I4oD0K0RbiBxkowP7QF90H+yLBqAYZblNrnsnYGuZsX9kXa/KXfo51xxgD6fvAmE5vuYeDdLHVH6m39jqAM3YaRrZGRbxnNxf71198yapTGkNxzIgxpP++pJSe2eyszSp4Wkpbop6Ru3XQp4VGLdfz0KbXzP5DLokkYyzTqdeZHc6bQ4JK238vQLBwC4jTfu2lZtb6XX2+P97TDbJpAtbC0FE34s026xswBVC1Ko9dZH7uFA/tOui+DmhNQhwGdav5EoNY0CBrrxlb4m2P+YO+kXBEgyy/67taiBfOgT0Rs8x4JDPupAfY6KDS9hwf13i6JAddo5HIc71n4TbGpwBYZxZgc892pmvgVciPhCMQf4ABcnnlnuj1c5lSiTDcXyYSdjDorW30Ou8zD6Ph3pHPsBo5wzRZ8xO8VNOf81vM97YLi4/pyFINIbd+tFlskADvKvqXwbeYWywMXT/yoTRIfeCWRdhcLu9AhmPUUKX3Zb3evgKTCf8MmT7RdJ4+eJANJOAhH33RKbH9N9d2gCUoAXWic3ajUMhvAL0Nbj439x5WIBOvy8kbGcIG1SUNoI5s4Hgc2B48fQIm/vtB3wijtJ3pYpCj6I9Nhtrw5Laitp1HJEJvy5tgpJSlCf2/nYeJA4tMIFAvSAxawvcKMqgxtEI7vRTRCsVQLAkuyuYDbkYAAuiwlKSvUY3RQyZW4qF1/0u7s4vRjdMh/ZGyRHir9JtGXJbfXholP702c3Fy7exezCr6MRkScFOF40+JH8DIzhIw/dLABXEoDM4LI88lkjfHk56aogAFJwm7eatiE/gcKT9cW/fksg//aHrIynonPoxOCtEwbi2JtgP8BeUiX27Ap5Orgiup+7EOZ0J0/ojjmaAIL3KhNzfI0KkyMy5m4GZQTIZbWrKY5D776JIi86/q+JHr9Gm3dEZbd4M4e2fQZeqYpgowWSKu6JLD1a+KqrVptnSSJbRmdBM+f1gChSgLJ64YO4nQqQaAAfKJfgAZdUZjzby4Y8tgj0oPofuHJEFmFS+9/aM0gNUBO0LMSLOB0SiyWWBZq2/e8RDFqC7O3wUCT11tsy8qQlpwb4bcuThYJHRDkThppcU3n7tqed9Xg9PV06b+woXy+fUaP+3UImdmeoWraXmF9HJXJo85XmvC+yUcpjEhZPW+S1a6wJJd3fIccNNQzAj8HHCKHiv4umagiivNrQBKSmCtQ1kAz6IejoIw1hAcc2BNFS4BJ41oLVwzcQMHWU09YTxsTvN/z8bCZALbSmoMLymugWvxE/qLvpUkVvivFs7VEWI2pViBkhwYBtmvtNeyg892yxTwIDcStsvXWRYHAqTx+azv8Svt3gAXxbBustQidTuWWGzo+p2YZ2sTCQRVTsXfZ2Yurxc+sX5ANerzgCF78EVTWxpL0nzWyZcI/TNFQjCAf8gkHil7SwEG+i+FpsNsrvwjMQEyxNglh3kU7ULZlnzziz8FhRpLj3tk0WShephSrEGX74HJTtg0jw4w9vxkuMbF+ywjn7ighHGZhfAw2ntx/LXJWbrW62i8EJ4hyyvlDeO3wi4JQj+J48QgMjtVM9GrUnGBocXHIjphsw6ElVBZMO4RwOyZaEGseauBHc8eM9ODAp6ryy2RytJkDlAYfzsjEPboX5DqAw09dI4qFo5+ufhF3s1sCPxLd9Eq964kkEy1OI8VWZDchibn1X23a76fWHg6nZmkl55mKR50FBM/EaCbPQNxX1Jli8jp/cdSbTua6naEzSMxFJ330v3D142ZBsBjAkF3J8AhlGMMMBNCX4dYrbBvwGiMJ8Q2nwLMy+/LvaWAFAXCKCJqBk+74WouUqEKiXCQYtniTikE5U7N71xtKTb3QqLiXwML9CwX0TgWIIHLDwb6wZupnkC/EyesUDrZ5dTXuKdRdr13isv4tTXXIV0wS5GAO6MHysmpE7pxNpLjQVKvaW9yy99o56hUYFAT8OCOGPtaVfp+9Qld+1kZWzKYaFpX5zmUntJ5eh1NbQnC1iGUoKouuAeIs1Xf8ZTW6FiG/BnE65C1kFWhY0Y0VwpqCKoxP4N47ZSrgU1vfQRw/P7a1JoCAuq1aMLu+XsUwAeJxATBejSv2pKUzQuiXtY8CcGYrRL56n77Tp5O7xkQ/AUL/ZTVxgDqyu1JVhx7BTlJllEj41qhHESUg70AljlDwJRdoyaLHIxqXyEq34gy9j4KRpnddHGMn14ONA55enBOHXYxl+IATDkx97r7HaLOusx8VMJ/2jUvNn8eEb3Kk1xwKhqCrG1E6XPoO06ayu2x+bqwnpvESpBc5P6xlkIh48xjSAjfve3BKfaOmne/YR5p6D0kODEDdDynu0V3p1Glh2PQbffugQ5ayYBQGAelNrw6i+N3wy1fVsyz8wLZ7Hk4hK3SPy/bd1hl4T/IpInCVWEWhU2dKiP6xTahiqexmJZexximd5YVfFoG3swq7uMMBJRs6w9yP0Y30VoXUe6zlzlpVNkLnpctCBzxBEXYZ+zgEtJBVlTnl8serCiUduSACi8b375rcMWeGG0W7nY1YpwPMI6tdxU0SMXpVU7Skq5rBgM9yDTbcKieCSNsb7WPlmBgaqVABIAy3UcGDsrAl6QDJJ7NMnMBIvlHLUWt1OJbe4T7Jml8YoDeY4VThc44dDr2zXz+7Gt2F+oCWIsOk2Cnv/KxmQbmM4KvbW8fniVFMv1KU8YG5/c6YuylyFZGlKwwH+fOYT3AKoJivJaIGjXuFAvP0m5J0vCX82co4B1woGHmcNkJf6eUqVlYUErKDnGwXsTmuIvwtRwdFvcWZk0zO2Djg9pljR0317RzIjNz4CBj22ZLt9JRb4M8fDgkkLP77KbIuKCHP6XSweqFu+MA+eqdSxxYL8u5x+f6VuF7USGRc8t+3kz6sMvC/rE5QIDX2+SceJA83iuAtTIVAedeNDYgTIQNCKRSYoiKd8tXPC310SMOgNlVZNnUc/yfgPx1Tjpz9rUQpkZ05+m3NOpNL2R+qK5fSto+8AAeIs1yD5qql6ixnkL3EJO4pzzRYfKUFXFr9VQcKJF9VxV9/PnCMJJbQ/t+ftxOwtNL9I4oiS1MJXYviMab7urgBItxAvB+gCkQtkbdv5c93795ENGbLST8/0LcmPiDf9bN51kIsS6qDe7AE0fDEln7GuuXvAO1wNYo7Q7jNjemgxm8J/FqlrWY7gd0qe+zcANaFO53EzXRe0lkV0qzGbFz5mO0HSAJLo5AZz2jZimRYrdd1ZIKn2gOeMVbrVGC030A5eI7FnXno7xQ4Qnrrl9Jbx9hn3U/aLsnNCrnbdbU83DlhvlHXmxgOI4GQ4Hs2YRPOQ2Tvbb0Wf1vE+Rh78jITN7K6p44vAErvYUNUU5qV3rdgO25/8tQui0xmU6neVl7o9/ji9/THjCD2daOyHxlIpp//JsftiXWAue5TL99Gy1YbzUm2rjSuVGrqZTGD3WWanrKoY37q2e5RLA0oCQ5ItLQPUZ898WU4iTqFLvwyjsHl7TM5Qy5EYLqmey4hGf90eb4L5E4C472Lqkl0CmjHpZOGWa1slyLAOMn5MS3XOlvZ5jU9vuCxfnRxgOoUsujjxIvGWKm4ZbsaJ54AbeNdW/sT7vi2mk/PnlXveqYeoxb/FHLbTF67Ifp7nZBZHc8L+3YGrN7XRwx8KM+urZ0vmnDsX/gARSkyZGeCr4VTOt6xMdwiXZMYAQSCsu0C0ff7BM9IMdKyXfaQezfZxi45D+Thhkp2w/ChXXqHSX9S5bfZLx93qaKhxFUIaIK0kz2wLs3hxBGPYm544aIQrRZipBrg4RJ4B8R31SabyeaLuJ4GuK/wjHQdHtHe2OiN8B0DG6l1Skg35h0hqJqHBajiLv/jEtxKMHP8z90VOA2bi4+zcTaEGEEYq1WpkuMKiaMQCQs+nooPEI1noWbrMJFdrzTCQKl7ODRFeugicv4U+kll/I278n8FrpUMxNSZPJbb7j9b2M2WZjyudloVKQPrtzdwdORJb4u1yMqfUH/7q1iCNp8cdpzIGzfpgw8PtKJYHcVD/bvOUOmbjjfBwcOld87wFwH4TaAMmz8qtjl87nzl57KBdGihNfke1XxEKnw+ixNtDxo182v2ExXEeSJGa5g7LLd2BRcxscuNlpWHZ8ERbUb5S+zIda98QfGXGA5rC3pEt1KA2Jd5SYtbQ9w4VtcZbl3WtCoNZtGtNLbI2IO1tUFrkna+/fGlvvazQOwmZl1No2nvXfkUf48cRQlBKOcf83zXjwr5+vf2lr/ikA0zNhDS7AgzqENxZBRhPvTYcTGx4aGhHjb7qZTveOP5zBaQJC519YEkdRcDPdPRSQNJGT2VOutPm2sg64UJiI40BZSEyfQefc9PLMHJcu8d4N5P/1sMVvrB71AYsvMOsoc1QlaNhNLi0laYHRALsgj0ndnq1l0+PAdNcGAleWEKJzeIOmni6z10CV6G0TDgHbJxJG7eDqonTcGN1e4BRg2wnDddPfL71Dxse9AySCbEd1YahvcC44UmiuMBisMo3xcUC60Pu6EqfmoLrRILSYEIF6Jir/BxSscOWos01ut2paH3AqFil8VcK2XncngYXThgGMuSRpYOmCHzBs58E75bAVi80iFtu0wXsYeRRBtYfmPMyxQuRR4zmJkKizZhl4DuvTDFdqfk+03CvzpIsOouftwYoAV9vbOqpdrEMhCvZLR1RaS8D6V9/JeuugqA0Aa/R1lRbqtlIEUeIc+K2cfEqkZ5Zqqb4wGWXt2rb3txs0dAYvtLLe+pbVtdNKnT5Q5xxinJUIvKDYdyJ1jSDYY8n0/lqVq9+G7rH8CpSKNmoorF+WynGXokzUonvY3FeMpoueSBgr39A3X2hCx+tWdHBgQ8UHz3dms6bNF9bJY4DodS5N3dfong/eDAL5+w8NdqVnZR3VzUuRmdzBC8eNqKTz5aR/7jJZDF+xaDUQVO7LTdIk61U+E5Oh2RM4tc/f+VVzeytplUDvM845n/DeiCUOoPC42/26L64TDKqNTz4pN09tiUZyFXXdzLfF6YqUuO8gKcjiP5RsLKx/rHMfXvjjVg9B5wO1NhqmzK5VlizOjtMCP2DupNOdVBNexeoSpnNQbrqFlySVcxJfKtKVIwMJsT0FP0HiY1q+OxCRobfchrpI/a+mFQf7cbtrRLY18oU1kEcg9anIqg+ZB+nU1pj1rrqQgSs3F09eu4StWBz/S/Xx80UCu41W+Rd7HmMrLww5USqL3rTYOCt/b2uoh8l93sxXzpRKmVOMm+E6V2dcHYlDOFZPVttbUKEMu9JBkxCE6gnV2JDW5XU3UHUZzbxObkcImznF0w5iXG7EgA9Uv8znpEex32AL0REKSUkZlLTZVFXtRiMO3HKtkbL49pemMYUoo0EY3AWBh7eLu9qfF5dypyGWPMJFZnaUFCqoD0VoE/j/kNG6LriHbfdd+93aRqgGwxdhBUbIPmzdw3vtNBqcLBLueBpR/y1/2mPUXDrS1qXcqdAT2Eq7Y3Jcb7UdxZH/1FO9xgnr5+9SoYt5bivTuLMqZzAim3fJs/jfutm8yQYtqN6F67CroTbPxa+l+ZT/Of6Crv/96GlyAg6RPqGBWK3594inL2BedNKEPZvocSF2d62//TJvDd14kEj09IB+E5ZLHEgGoLOyEKyi1RQzfLcCteAP6013Yr4H6Y7u0nxM3c6VRu3KFTk2l1/H9ovTD+jP/caFGmXYEaANP68UYCvEfaKz4sPt5PIRHwAkC5wHjWnT/cI85Yvg0Q3qheBHTJvntyZzp4AqN5C8TqY423OWAs1vGccs9Wv7C6kSahEwTEjZQVh5Ay+rOnf7TMXfxPvv7g7y0VMBJYUengBUMDw2XqnvCACz1BduZQAm0adUSYejxgKRWzMTnczLKk+BohFtBHaiE8JNzi2Yx158ekjpfKEpGnyCniunL51VlKLKkHCJhgnuHIvFN8lWMHUbC3X2mytAtlELGsdseSToAXeDKgTqR77ChKrRici1eOpxDlmqvXftuqFaFUkF9loodCC4FNc4Ui2ghxxLbGJSnCzPVPIV9eMvEJILqTOH0E6tRPV0N0+jIdQt0gGmVqiyre067BE8uBj3wyThcnbO7EV/pJXkcdWEhVt2/KI8PK7RnBu1aF9gtCVuFoiiabaqlm+0lVJYPCaRAtaY3o9JjGqKx7mg1uyaB6KACHGn4lw3xCTR1Jj8xcqsJe4LJgW+eu9PYM5f51DBX7olrbLy9HQVDF9y5/e4NpeDutBRIM3HRf558L9xSVE8ArhFiWxUjXJOz8sStQ7Vntfg7fbc6G2KmN4hi4F/Bhjc4Jzt5vPnWU/Lnqaq05QNL/t94VsQPsqz2YXt1RcQhRRC7JNUv1EmayclFhZRuY6YqtoKN7qGKL2gWc2IQBJ0V0lA0GPcwT87HmOjjw4MC29p0p1wlcA+9EE5yc7UMrSISDbEFutoIic8ohucfPGzkHdfUFA62SzxmIzRmLWDTK25L6QDrIOZuZ3/NXZDCDzEPXdiXN6WyulSEk/P1gv87LDvPAEMu3z48XoPjOadrD0q9hlq35B3oOu7i571qQiRMwMrEzinge6BkZXZqBZOdWzRik3PGwW68GFsvqegI7wu8uQR/eaMXS7DFkl9ZDjyx8d21ajNbUvwHm/GqMPcNAKt9czpdOIn+W0CXyjoSw34ZQTG0XlunagFrr/ydB0O+WqWSoCOLrkvoMVxvoRGQ5AndR5XkWYwgPQEYrqX4yiz9J9qcmDNkPP7YfSnEsij411QAsPTfOq1urc/EC7KBm15zoQVBslwE6dvbCteBXu8EeNAhxYxWANvo/0YwEK+gKot/MbFXFZ4b0XTvMmcEyPR8p5rSkbYCdsDH7MGHyk8Kitt1TZxfWvz0O+kxNdXxZcydEJwe3HI7QMO8ETjUyqakaGlylT1GO3f3lgxmsW1uqNmbeNTUlMtvi1ZL1heAUGeiBth14dCuCO4zFj//Hlr3aUgpTTmpncbCySeRn3e8jj1D9aYQGXfoDK+oLLGc9IP4TkEUM8o7K26RLBViGpeW+Vv98faG3iyVTADz+vEAH97ozCJOJB/QkpMHq8kdkUmyRyWKuwxxCbSPgX9a5oXKs+/nF/BoXOkyWa7j7igAwyVc+0jxO7aTHWBxp+9DDBs8gYmxbXjxTSlBV8EQPfxkIQtcB0aSplHNtiC7wvmeW8Fa+dDj2QvXXl1AentYakov00DdnNguQdStIesrIXfu5P8LADOITeHCkRWjJ/kR0hpe20m0z+vIPeoU9sQUK8LCutCcMgMDtjBhehzVAARoZPlLFLByrSmmbesZmlarlTDG6A/YdiLTyYrZD6HKDYP6K8JhQH4rU1xRTJY08yh5vqhz9bgPZP6nOM7nnqibxvoTYOHX8XsFMPgZCIV/3QFQa4lB2dc0bGMMUe2r6RZq2afhwmv9qlrgjQndrvfQFg3NRTTwylvNgFiA4/2COKLwfqI5qiiDNH59vs58JnfHepTvAAR89H4Yi3IGEmJ4c+jlkfbW1sAxxlBkxeXB/Yfb32N9UgfgjGnKKF/73xsWXmpKB2c5YdsPC1abH+Bu0053pKusCuNWsYx2d5QyqSc3ksX05eVTT+zQCAGPHJJWUsDvx6chWi3K9j6c/Sj9T0pzhlJtg7hPkXuQnAbAjalq9i/1P505bMSEbBHxtlZZIz1i4upAOClZvifTRcZ2X/QL9sMyJBBHIRob3s2Pq0c6JzURysBn6dUCpO0Sn8BIIZSkY0SwYFy6AlV4LluTQov1/smUeTWO0tRPasTxKGca9vz2uud4eUPQmsCS6cQBitEQ4WAf/uk44oRRDq6xcIihj3R8LufkXX6nC78CJ0BBa5mZ3uZUFx2mQqrb5iygd+hXvCwfUTA877KZJIFu9Dy7f+XiYHf8p4m83BEZGamSKo5kINtlFIIRbE7JHit+y9EkF9H4s4DrRhxVPf1wWrFItACjHEcTf+oluRWiueaIBF7DIlPEXEdcBaz1PvQwyqvBWZj68HWUaRFInk4LJpMEIaxvOpqa70pXtlxDsvN78LxFvrwUVGCVGYWeoXAmJKrzB9XbvfHUuCBmRz5PTnTXAsMdd4FkVfET+1xigs91GW7RTwGYXWh4v+d4/zCLLV1FSPTFX+N7ue27VPtp0FOl8qpiSQlNMMONUzAezq0ggAAA" />
+            <h3>Dr. Guilherme Campos</h3>
+            <small class="muted">Geriatra — CRM 150.724 • RQE 80753</small>
+            <p class="muted">UNESP • Residência em Clínica Médica (Santa Casa de São Carlos) • Residência em Geriatria (EPM-Unifesp) • Mestre.</p>
+            <p><a class="btn ghost" target="_blank" rel="noopener" href="https://clinicamedicaatos.com.br/dr-guilherme-4/">Saiba mais</a></p>
+          </article>
+
+          <article class="doc">
+            <img class="avatar-photo" loading="lazy" alt="Foto da Dra. Ana Flávia Moreira — Cardiologista" src="data:image/webp;base64,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" />
+            <h3>Dra. Ana Flávia Moreira</h3>
+            <small class="muted">Cardiologista — CRM 169028 • RQE 80609 &amp; 80610</small>
+            <p class="muted">UNIARA • Residência em Clínica Médica (FAMECA) • Residência em Cardiologia (Unifesp) • Membro Titular da SBC.</p>
+            <p><a class="btn ghost" target="_blank" rel="noopener" href="https://clinicamedicaatos.com.br/dra-anaflavia/">Saiba mais</a></p>
+          </article>
+
+          <article class="doc">
+            <div class="avatar" aria-hidden="true" style="width:88px;height:88px;border-radius:50%;background:#edf4fb;display:grid;place-items:center;margin-bottom:.5rem;border:1px solid #e0e9f5">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="4" stroke="#0E5AA7" stroke-width="2"/><path d="M4 22c1-4 4-6 8-6s7 2 8 6" stroke="#0E5AA7" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Dra. Aurora de Fátima Ponte Campos</h3>
+            <small class="muted">Clínico Geral</small>
+            <p class="muted">Atendimento humanizado em todas as fases da vida.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section>
+      <div class="container">
+        <div class="grid cols-2">
+          <div>
+            <h2>Depoimentos</h2>
+            <p class="muted">Com autorização dos pacientes. Fotos e nomes podem ser substituídos por avatares para preservar privacidade.</p>
+          </div>
+          <div>
+            <div class="slider" aria-roledescription="carrossel" aria-label="Depoimentos de pacientes">
+              <div class="slides" id="slides">
+                <figure class="slide">
+                  <img class="t-avatar" alt="Paciente verificada" src="data:image/svg+xml;utf8,<?xml version='1.0'?><svg xmlns='http://www.w3.org/2000/svg' width='128' height='128'><rect width='128' height='128' rx='64' fill='%23dcebf8'/><text x='50%' y='55%' text-anchor='middle' font-size='56' font-family='Arial' fill='%230E5AA7'>A</text></svg>">
+                  <figcaption>
+                    <div class="t-name">Ana, 68 • Geriatria <span class="stars">★★★★★</span></div>
+                    <blockquote>Atendimento impecável, da recepção ao médico. Senti-me ouvida e orientada com clareza.</blockquote>
+                  </figcaption>
+                </figure>
+                <figure class="slide">
+                  <img class="t-avatar" alt="Paciente verificado" src="data:image/svg+xml;utf8,<?xml version='1.0'?><svg xmlns='http://www.w3.org/2000/svg' width='128' height='128'><rect width='128' height='128' rx='64' fill='%23e7f6ed'/><text x='50%' y='55%' text-anchor='middle' font-size='56' font-family='Arial' fill='%232AA65A'>J</text></svg>">
+                  <figcaption>
+                    <div class="t-name">João, 54 • Cardiologia <span class="stars">★★★★★</span></div>
+                    <blockquote>Equipe atenciosa e muito competente. Agendamento e confirmação foram rápidos.</blockquote>
+                  </figcaption>
+                </figure>
+                <figure class="slide">
+                  <img class="t-avatar" alt="Paciente verificada" src="data:image/svg+xml;utf8,<?xml version='1.0'?><svg xmlns='http://www.w3.org/2000/svg' width='128' height='128'><rect width='128' height='128' rx='64' fill='%23f5f7fb'/><text x='50%' y='55%' text-anchor='middle' font-size='56' font-family='Arial' fill='%231b1f24'>M</text></svg>">
+                  <figcaption>
+                    <div class="t-name">Maria, 41 • Clínica Médica <span class="stars">★★★★★</span></div>
+                    <blockquote>Ambiente tranquilo e organizado. Excelente acompanhamento no pós-consulta.</blockquote>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="dots" role="tablist" aria-label="Controles do carrossel">
+              <button role="tab" aria-selected="true" class="active"></button>
+              <button role="tab"></button>
+              <button role="tab"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
+      <div class="container">
+        <h2>Conteúdo de saúde</h2>
+        <p class="muted">Artigos curtos para decisões melhores no dia a dia. (Opcional, recomendado para SEO.)</p>
+        <div class="grid cols-3">
+          <article class="card"><h3>Memória &amp; Envelhecimento</h3><p class="muted">Quando investigar alterações de memória e como a família pode ajudar.</p><a href="#" aria-disabled="true">Ler artigo</a></article>
+          <article class="card"><h3>Pressão Alta sem Drama</h3><p class="muted">Mudanças que sustentam o tratamento e reduzem riscos.</p><a href="#" aria-disabled="true">Ler artigo</a></article>
+          <article class="card"><h3>Consulta Preparada = Consulta Melhor</h3><p class="muted">Checklist prático para sua próxima consulta render mais.</p><a href="#" aria-disabled="true">Ler artigo</a></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MULTIMÍDIA -->
+    <section id="midia">
+      <div class="container">
+        <h2>Tour e equipe em vídeo</h2>
+        <p class="muted">Apresente o ambiente e a equipe. Substitua o link abaixo por um vídeo próprio (YouTube <em>privacy-enhanced</em>) ou um arquivo MP4 hospedado.</p>
+        <div class="video-wrap">
+          <iframe title="Tour da clínica"
+            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+            loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq">
+          <details><summary>Quais documentos devo levar?</summary><p>Documento com foto, cartão do convênio (se houver), lista de medicamentos e exames recentes.</p></details>
+          <details><summary>Como funcionam as teleconsultas?</summary><p>Realizamos videoatendimento quando clinicamente indicado. Você recebe o link após a confirmação.</p></details>
+          <details><summary>Posso remarcar/cancelar?</summary><p>Sim. Avise com antecedência pelo WhatsApp para liberarmos o horário a outros pacientes.</p></details>
+          <details><summary>Quais são os horários disponíveis?</summary><p>Veja o calendário interativo no agendamento e escolha a data/horário mais conveniente.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / BOOKING (Wizard + Calendar) -->
+    <section id="contato">
+      <div class="container grid cols-2">
+        <div class="wizard">
+          <div class="steps">
+            <div class="step" id="s1"><span>1</span><strong>Seus dados</strong></div>
+            <div class="step" id="s2"><span>2</span><strong>Consulta</strong></div>
+            <div class="step" id="s3"><span>3</span><strong>Revisar &amp; enviar</strong></div>
+          </div>
+          <form id="formAgenda" novalidate>
+            <!-- Step 1 -->
+            <section data-step="1">
+              <div class="field"><label for="nome">Nome completo</label><input id="nome" autocomplete="name" required placeholder="Seu nome"><div class="error" data-err="nome"></div></div>
+              <div class="field"><label for="tel">Telefone/WhatsApp</label><input id="tel" autocomplete="tel" inputmode="tel" required placeholder="(12) 9 9999-9999"><div class="error" data-err="tel"></div></div>
+              <p class="helper">Se preferir, enviaremos confirmações por WhatsApp.</p>
+            </section>
+
+            <!-- Step 2 -->
+            <section data-step="2" hidden>
+              <div class="field"><label for="prof">Profissional</label>
+                <select id="prof" required>
+                  <option value="">Selecione</option>
+                  <option>Geriatria — Dra. Mariana Moreira</option>
+                  <option>Geriatria — Dr. Guilherme Campos</option>
+                  <option>Cardiologia — Dra. Ana Flávia Moreira</option>
+                  <option>Clínico Geral — Dra. Aurora de Fátima P. Campos</option>
+                </select>
+                <div class="error" data-err="prof"></div>
+              </div>
+
+              <div class="field"><label for="tipo">Tipo de consulta</label>
+                <select id="tipo" required>
+                  <option value="">Selecione</option>
+                  <option>Primeira consulta</option>
+                  <option>Retorno</option>
+                  <option>Teleconsulta</option>
+                </select>
+                <div class="error" data-err="tipo"></div>
+              </div>
+
+              <div class="grid cols-2">
+                <div>
+                  <label for="data">Data</label>
+                  <input id="data" type="date" required>
+                  <div class="error" data-err="data"></div>
+                  <div class="calendar" id="calendar" aria-label="Calendário de disponibilidade">
+                    <div class="cal-head">
+                      <button type="button" class="btn ghost" id="prevCal" aria-label="Mês anterior">‹</button>
+                      <strong id="calTitle">Mês</strong>
+                      <button type="button" class="btn ghost" id="nextCal" aria-label="Próximo mês">›</button>
+                    </div>
+                    <div class="cal-grid" id="calGrid" aria-live="polite"></div>
+                  </div>
+                </div>
+                <div>
+                  <label>Horários disponíveis</label>
+                  <div class="slots" id="slots"></div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="msg">Observações (opcional)</label>
+                <textarea id="msg" rows="3" placeholder="Ex.: usar elevador, trazer exames X, Y..."></textarea>
+              </div>
+            </section>
+
+            <!-- Step 3 -->
+            <section data-step="3" hidden>
+              <div class="card">
+                <h3>Revise os dados</h3>
+                <p id="review"></p>
+                <label class="helper"><input id="lgpd" type="checkbox" required> Li e concordo com a <a href="#politica" id="openPolicy">Política de Privacidade</a>.</label>
+                <div class="error" data-err="lgpd"></div>
+              </div>
+              <p class="helper">Ao enviar, abriremos o WhatsApp com o seu pedido de agendamento preenchido.</p>
+            </section>
+
+            <div class="wizard-actions">
+              <button type="button" class="btn" id="prevBtn">Voltar</button>
+              <button type="button" class="btn primary" id="nextBtn"><span>Próximo</span></button>
+              <button type="submit" class="cta" id="submitBtn" hidden>
+                <span class="spinner" id="spinner" hidden></span>
+                <span id="submitTxt">Solicitar agendamento</span>
+              </button>
+            </div>
+            <p id="feedback" class="helper" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div>
+          <div class="card">
+            <strong>Endereço</strong>
+            <p class="muted">Av. Tiradentes, 169 — Jardim das Nações, Taubaté/SP • 12030-180</p>
+            <div style="border-radius:12px;overflow:hidden;border:1px solid #e8eef5">
+              <iframe title="Mapa — Clínica Médica Atos" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Av.%20Tiradentes%2C%20169%20-%20Jardim%20das%20Na%C3%A7%C3%B5es%2C%20Taubat%C3%A9%20-%20SP%2C%2012030-180&output=embed"
+                width="100%" height="280" style="border:0"></iframe>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem">
+              <div class="card" style="background:#fefefe">
+                <strong>Contato</strong>
+                <p class="muted">Tel.: (12) 0000-0000<br>WhatsApp: (12) 9 9999-9999</p>
+              </div>
+              <div class="card" style="background:#fefefe">
+                <strong>Emails</strong>
+                <p class="muted">contato@clinicamedicaatos.com.br<br>agendamento@clinicamedicaatos.com.br</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="politica">
+    <div class="container foot-grid">
+      <div><h3 style="margin-top:0">Clínica Médica Atos</h3><p>Excelência clínica com tecnologia simples e humana para sua jornada de saúde.</p><p class="muted" style="font-size:.95rem">Aviso: este site tem caráter informativo e não substitui consulta médica. Em caso de emergência, procure atendimento imediato.</p></div>
+      <div><h3>Atendimento</h3><ul style="list-style:none;padding:0;margin:0;line-height:2"><li>Segunda a Sexta: 8h–18h</li><li>Sábado: sob consulta</li></ul></div>
+      <div><h3>Endereço</h3><address style="font-style:normal;line-height:1.7">Av. Tiradentes, 169 — Jardim das Nações<br>Taubaté/SP • 12030-180</address></div>
+    </div>
+    <div class="container" style="margin-top:1rem;border-top:1px solid #233146;padding-top:1rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+      <small>© <span id="year"></span> Clínica Médica Atos — Todos os direitos reservados.</small>
+      <small><a href="#politica" id="policyLink">Política de Privacidade</a> • <a href="#terms" id="termsLink">Termos de Uso</a></small>
+    </div>
+  </footer>
+
+  <!-- Floating Actions -->
+  <div class="fab" aria-label="Ações rápidas">
+    <a id="waBtn" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">WhatsApp</a>
+    <a class="secondary" href="#contato" aria-label="Abrir agendamento">Agendar</a>
+  </div>
+  <div class="to-top" id="toTop"><button aria-label="Voltar ao topo">Topo</button></div>
+
+  <!-- Privacy Modal -->
+  <dialog id="policyModal" style="max-width:720px;border:1px solid #d7e2ee;border-radius:16px">
+    <form method="dialog" style="margin:0">
+      <header style="padding:1rem 1rem .25rem"><h3 style="margin:0">Política de Privacidade</h3></header>
+      <section style="padding:0 1rem 1rem;color:#374151">
+        <p>Coletamos dados mínimos (nome e contato) para marcação e confirmação de consulta. Não vendemos seus dados.</p>
+        <ul><li>Base legal: execução de contrato e legítimo interesse.</li><li>Direitos: confirmação, acesso, correção e eliminação.</li><li>Contato do DPO: dpo@clinicamedicaatos.com.br</li></ul>
+      </section>
+      <footer style="padding:0 1rem 1rem;display:flex;justify-content:flex-end;gap:.5rem"><button value="cancel">Fechar</button></footer>
+    </form>
+  </dialog>
+
+  <!-- Terms Modal -->
+  <dialog id="termsModal" style="max-width:720px;border:1px solid #d7e2ee;border-radius:16px">
+    <form method="dialog" style="margin:0">
+      <header style="padding:1rem 1rem .25rem"><h3 style="margin:0">Termos de Uso</h3></header>
+      <section style="padding:0 1rem 1rem;color:#374151"><p>As informações não substituem avaliação médica presencial. O uso do site implica concordância com estes termos.</p></section>
+      <footer style="padding:0 1rem 1rem;display:flex;justify-content:flex-end;gap:.5rem"><button value="cancel">Fechar</button></footer>
+    </form>
+  </dialog>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Clínica Médica Atos",
+    "url": "https://clinicamedicaatos.com.br/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Tiradentes, 169",
+      "addressLocality": "Taubaté",
+      "addressRegion": "SP",
+      "postalCode": "12030-180",
+      "addressCountry": "BR"
+    },
+    "medicalSpecialty": ["Geriatric","Cardiovascular","PrimaryCare"],
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "image": "https://clinicamedicaatos.com.br/opengraph.jpg",
+    "telephone": "+55-12-0000-0000",
+    "geo": {"@type":"GeoCoordinates","latitude": -23.017, "longitude": -45.555},
+    "employee":[
+      {"@type":"Physician","name":"Dra. Mariana Moreira","medicalSpecialty":"Geriatric","identifier":"CRM 169277 / RQE 80432"},
+      {"@type":"Physician","name":"Dr. Guilherme Campos","medicalSpecialty":"Geriatric","identifier":"CRM 150.724 / RQE 80753"},
+      {"@type":"Physician","name":"Dra. Ana Flávia Moreira","medicalSpecialty":"Cardiovascular","identifier":"CRM 169028 / RQE 80609, 80610"}
+    ]
+  }
+  </script>
+
+  <script>
+    // ===== Config fácil =====
+    const CLINIC = {
+      whatsapp: '5512999999999',   // Substitua pelo WhatsApp oficial com DDI
+      phoneText: '(12) 0000-0000',
+      siteUrl: 'https://clinicamedicaatos.com.br/'
+    };
+
+    // ===== Menu mobile =====
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    menuBtn?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+    // ===== Scrollspy =====
+    const sections = ['home','clinica','equipe','servicos','faq','contato'].map(id => document.getElementById(id));
+    const navLinks = Array.from(menu?.querySelectorAll('a[href^="#"]') || []);
+    const IO = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        const link = navLinks.find(l => l.getAttribute('href') === `#${id}`);
+        if (link) link.setAttribute('aria-current', entry.isIntersecting ? 'page' : null);
+      });
+    }, { rootMargin: '-50% 0px -49% 0px', threshold: 0.01 });
+    sections.forEach(s => s && IO.observe(s));
+
+    // ===== Carrossel Depoimentos =====
+    const slides = document.getElementById('slides');
+    const dots = Array.from(document.querySelectorAll('.dots button'));
+    let idx = 0;
+    function go(i){ idx = i; slides.style.transform = `translateX(-${i*100}%)`; dots.forEach((d,n)=>d.classList.toggle('active', n===i)); }
+    dots.forEach((d,i)=>d.addEventListener('click',()=>go(i)));
+    setInterval(()=>go((idx+1)%dots.length), 6000);
+
+    // ===== FAB WhatsApp =====
+    const waBtn = document.getElementById('waBtn');
+    function refreshWA(){
+      const url = `https://wa.me/${CLINIC.whatsapp}?text=${encodeURIComponent('Olá! Gostaria de agendar uma consulta pela Clínica Médica Atos.')}`;
+      waBtn.href = url;
+    }
+    refreshWA();
+
+    // ===== To Top =====
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll',()=>{ toTop.classList.toggle('show', window.scrollY > 600); });
+    toTop.querySelector('button')?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+    // ===== Modais =====
+    const policyModal = document.getElementById('policyModal');
+    const termsModal  = document.getElementById('termsModal');
+    document.getElementById('openPolicy')?.addEventListener('click', (e)=>{ e.preventDefault(); policyModal.showModal(); });
+    document.getElementById('policyLink')?.addEventListener('click',(e)=>{ e.preventDefault(); policyModal.showModal(); });
+    document.getElementById('termsLink')?.addEventListener('click', (e)=>{ e.preventDefault(); termsModal.showModal(); });
+
+    // ===== Wizard =====
+    const form = document.getElementById('formAgenda');
+    const steps = Array.from(form.querySelectorAll('[data-step]'));
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const spinner = document.getElementById('spinner');
+    const feedback = document.getElementById('feedback');
+    const review = document.getElementById('review');
+    const toast = document.getElementById('toast');
+
+    const stepEls = [document.getElementById('s1'),document.getElementById('s2'),document.getElementById('s3')];
+    let current = 1;
+    function showStep(n){
+      current = n;
+      steps.forEach((sec,i)=>sec.hidden = (i+1)!==n);
+      stepEls.forEach((el,i)=>el.classList.toggle('active', (i+1)===n));
+      prevBtn.disabled = n===1;
+      nextBtn.hidden   = n===3;
+      submitBtn.hidden = n!==3;
+      feedback.textContent = '';
+      if(n===3){
+        const nome = document.getElementById('nome').value.trim();
+        const tel = document.getElementById('tel').value.trim();
+        const prof = document.getElementById('prof').value;
+        const tipo = document.getElementById('tipo').value;
+        const data = document.getElementById('data').value;
+        const hora = document.querySelector('.slot.active')?.textContent || '';
+        const msg  = document.getElementById('msg').value.trim();
+        review.innerHTML = `<strong>Nome:</strong> ${nome}<br><strong>Contato:</strong> ${tel}<br><strong>Profissional:</strong> ${prof}<br><strong>Tipo:</strong> ${tipo}<br><strong>Data/Hora:</strong> ${data} ${hora||''}<br><strong>Observações:</strong> ${msg || '-'}`;
+      }
+    }
+    prevBtn.addEventListener('click',()=>showStep(Math.max(1,current-1)));
+    nextBtn.addEventListener('click',()=>{
+      if(validateCurrent()) showStep(Math.min(3,current+1));
+    });
+    showStep(1);
+
+    // ===== Máscara de telefone (BR) =====
+    const tel = document.getElementById('tel');
+    tel.addEventListener('input',()=>{
+      const v = tel.value.replace(/\D/g,'');
+      let m = v;
+      if(v.length>0){ m = '(' + v.substring(0,2); }
+      if(v.length>=3){ m += ') ' + v.substring(2,3) + ' '; }
+      if(v.length>=7){ m += v.substring(3,7) + '-' + v.substring(7,11); }
+      else if(v.length>3){ m += v.substring(3,7); }
+      tel.value = m;
+    });
+
+    // ===== Validação em tempo real =====
+    const fields = ['nome','tel','prof','tipo','data'];
+    fields.forEach(id=>{
+      const el = document.getElementById(id);
+      el?.addEventListener('blur',()=>validateField(id));
+      el?.addEventListener('change',()=>validateField(id));
+      el?.addEventListener('input',()=>validateField(id));
+    });
+    function validateField(id){
+      const el = document.getElementById(id);
+      if(!el) return true;
+      const wrapper = el.closest('.field') || el.parentElement;
+      const err = document.querySelector(`[data-err="${id}"]`);
+      let ok = !!el.value;
+      if(id==='tel') ok = el.value.replace(/\D/g,'').length>=11;
+      if(id==='data') ok = !!el.value && new Date(el.value) >= new Date(new Date().toDateString());
+      wrapper?.classList.toggle('invalid', !ok);
+      if(err) err.textContent = ok ? '' : mensagemErro(id);
+      return ok;
+    }
+    function mensagemErro(id){
+      switch(id){
+        case 'nome': return 'Informe seu nome completo.';
+        case 'tel': return 'Informe um número válido com DDD.';
+        case 'prof': return 'Selecione o profissional.';
+        case 'tipo': return 'Selecione o tipo de consulta.';
+        case 'data': return 'Escolha uma data válida.';
+        case 'lgpd': return 'É necessário aceitar a política de privacidade.';
+        default: return 'Campo obrigatório.';
+      }
+    }
+    function validateCurrent(){
+      if(current===1){ return validateField('nome') & validateField('tel'); }
+      if(current===2){ return validateField('prof') & validateField('tipo') & validateField('data'); }
+      return true;
+    }
+
+    // ===== Calendário interativo =====
+    const calTitle = document.getElementById('calTitle');
+    const calGrid  = document.getElementById('calGrid');
+    const prevCal  = document.getElementById('prevCal');
+    const nextCal  = document.getElementById('nextCal');
+    const dataInp  = document.getElementById('data');
+    const slotsBox = document.getElementById('slots');
+
+    let view = new Date(); view.setDate(1);
+    function weekdaySlots(d){ // 0=Dom,1=Seg...
+      const byDow = {
+        0: [],
+        1: ['08:00','09:40','11:20','14:00','15:40','17:20'],
+        2: ['08:00','09:40','11:20','14:00','15:40','17:20'],
+        3: ['08:00','09:40','11:20','14:00','15:40'],
+        4: ['08:00','09:40','11:20','14:00','15:40','17:20'],
+        5: ['08:00','09:40','11:20'],
+        6: []
+      };
+      return byDow[d] || [];
+    }
+    function renderCalendar(){
+      const y = view.getFullYear(), m = view.getMonth();
+      calGrid.innerHTML = '';
+      const monthName = view.toLocaleString('pt-BR', {month:'long', year:'numeric'});
+      calTitle.textContent = monthName[0].toUpperCase()+monthName.slice(1);
+      const header = ['D','S','T','Q','Q','S','S'];
+      header.forEach(h=>{ const d=document.createElement('div'); d.textContent=h; d.className='hd'; calGrid.appendChild(d); });
+      const firstWeekday = (new Date(y,m,1).getDay());
+      const daysInMonth = new Date(y,m+1,0).getDate();
+      for(let i=0;i<firstWeekday;i++){ const cell=document.createElement('div'); cell.className='cal-day disabled'; calGrid.appendChild(cell); }
+      for(let day=1;day<=daysInMonth;day++){
+        const date = new Date(y,m,day);
+        const cell = document.createElement('div'); cell.className='cal-day'; cell.tabIndex=0;
+        const dow = date.getDay();
+        const avail = weekdaySlots(dow);
+        const today = new Date(new Date().toDateString());
+        const isPast = date < today;
+        if(isPast || avail.length===0){ cell.classList.add('disabled'); }
+        cell.innerHTML = `<div aria-hidden="true">${day}${avail.length && !isPast ? '<span class="dot"></span>':''}</div>`;
+        cell.addEventListener('click', ()=>selectDate(date, cell, avail));
+        cell.addEventListener('keypress', (e)=>{ if(e.key==='Enter' && !cell.classList.contains('disabled')) selectDate(date, cell, avail); });
+        calGrid.appendChild(cell);
+      }
+      const init = new Date(); if(weekdaySlots(init.getDay()).length){ selectDate(init, null, weekdaySlots(init.getDay())); }
+    }
+    function selectDate(date, cell, avail){
+      if(cell && cell.classList.contains('disabled')) return;
+      dataInp.value = date.toISOString().slice(0,10);
+      document.querySelectorAll('.cal-day').forEach(c=>c.classList.remove('selected'));
+      if(cell) cell.classList.add('selected');
+      renderSlots(avail);
+    }
+    function renderSlots(list){
+      slotsBox.innerHTML = '';
+      list.forEach(t=>{
+        const b = document.createElement('button');
+        b.type='button'; b.className='slot'; b.textContent=t;
+        b.addEventListener('click', ()=>{
+          document.querySelectorAll('.slot').forEach(el=>el.classList.remove('active'));
+          b.classList.add('active');
+        });
+        slotsBox.appendChild(b);
+      });
+      if(!list.length){ slotsBox.innerHTML = '<span class="helper">Sem horários neste dia. Escolha outra data.</span>'; }
+    }
+    prevCal.addEventListener('click',()=>{ view.setMonth(view.getMonth()-1); renderCalendar(); });
+    nextCal.addEventListener('click',()=>{ view.setMonth(view.getMonth()+1); renderCalendar(); });
+    renderCalendar();
+
+    // sincroniza seleção manual no input date
+    dataInp.addEventListener('change',()=>{
+      const d = new Date(dataInp.value);
+      if(isNaN(d)) return;
+      view = new Date(d.getFullYear(), d.getMonth(), 1);
+      renderCalendar();
+      const cell = Array.from(document.querySelectorAll('.cal-day')).find(c=>c.textContent.trim().startsWith(String(d.getDate())));
+      const avail = weekdaySlots(d.getDay());
+      if(cell){ cell.classList.add('selected'); renderSlots(avail); }
+    });
+
+    // ===== Submit =====
+    form.addEventListener('submit',(e)=>{
+      e.preventDefault();
+      const ok = validateField('nome') & validateField('tel') & validateField('prof') & validateField('tipo') & validateField('data');
+      const lgpd = document.getElementById('lgpd');
+      if(!lgpd.checked){ const err = document.querySelector('[data-err="lgpd"]'); err.textContent = mensagemErro('lgpd'); return; }
+      if(!ok) return;
+      spinner.hidden = false; document.getElementById('submitTxt').textContent = 'Enviando...';
+      const prof = document.getElementById('prof').value;
+      const tipo = document.getElementById('tipo').value;
+      const data = document.getElementById('data').value;
+      const hora = document.querySelector('.slot.active')?.textContent || '';
+      const nome = document.getElementById('nome').value.trim();
+      const telv = document.getElementById('tel').value.trim();
+      const msg  = document.getElementById('msg').value.trim();
+      const texto = `Olá! Quero solicitar agendamento:%0A• Nome: ${nome}%0A• Contato: ${telv}%0A• Profissional: ${prof}%0A• Tipo: ${tipo}%0A• Data/Horário: ${data} ${hora}%0A• Observações: ${msg || '-'}%0A(Enviado pelo site)`;
+      const link = `https://wa.me/${CLINIC.whatsapp}?text=${texto}`;
+      window.open(link,'_blank','noopener');
+      spinner.hidden = true; document.getElementById('submitTxt').textContent = 'Solicitar agendamento';
+      toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'), 4500);
+      form.reset(); showStep(1);
+    });
+
+    // Ano rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
